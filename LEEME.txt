@@ -1,0 +1,74 @@
+PORTFOLIO LUCIANA BIONDO — CÓMO USARLO
+=======================================
+
+ESTRUCTURA DE LA CARPETA
+------------------------
+portfolio-luciana/
+├── index.html    → el contenido (textos, videos, datos de contacto)
+├── styles.css    → colores, tipografías y animaciones
+├── script.js     → funciones (filtros, intro, línea de tiempo, formulario)
+├── LEEME.txt     → este archivo
+├── img/
+│   └── luciana.jpg          ← la foto de perfil (vertical, ideal 1000x1250 px)
+└── videos/
+    ├── felix-1.mp4          ← Campaña Félix
+    ├── felix-2.mp4
+    ├── felix-3.mp4
+    ├── diariouno-1.mp4      ← Diario UNO
+    ├── diariouno-2.mp4
+    ├── diariouno-3.mp4
+    ├── jh-1.mp4             ← JH Broker
+    ├── jh-2.mp4
+    └── jh-3.mp4
+
+Los nombres van en minúsculas, sin espacios y sin tildes.
+Formato: .mp4 (H.264), vertical 9:16. Ideal menos de 30 MB cada uno.
+Si un archivo falta, la página muestra un recuadro con el nombre que tenés que subir.
+
+
+PARA VERLO
+----------
+Abrí la carpeta en Visual Studio Code y hacé doble clic en index.html
+(o clic derecho → "Open with Live Server" si tenés esa extensión).
+La primera vez que entrás se ve una cuenta regresiva 3·2·1; después no
+vuelve a aparecer hasta que cierres la pestaña.
+
+
+QUÉ EDITAR
+----------
+En index.html buscá  ✏️  con Ctrl+F (Cmd+F en Mac). Ahí están:
+  - textos de la portada y biografía
+  - números destacados (data-count="8")
+  - títulos y descripciones de cada video
+  - textos de cada proyecto
+  - tarjetas de experiencia
+  - datos de contacto
+
+Buscá  [COMPLETAR]  para los textos de JH Broker que faltan.
+
+En script.js, al principio, están las PALABRAS que rotan en la portada.
+En styles.css, al principio, está la PALETA DE COLORES.
+
+
+LÍNEA DE TIEMPO DE EXPERIENCIA
+------------------------------
+Cada clip tiene  style="--start:XX; --end:YY"  (porcentajes de 0 a 100):
+   0 = enero 2024    33 = enero 2025    67 = enero 2026    92 = hoy
+Para JH Broker cambiá esos números según cuándo trabajó ahí.
+
+
+FORMULARIO DE CONTACTO (FORMSPREE)
+----------------------------------
+1. Entrá a https://formspree.io y creá una cuenta con lucibion2@gmail.com
+2. "New Form" → ponele un nombre → crealo.
+3. Te da una dirección tipo  https://formspree.io/f/abcdwxyz
+4. En index.html reemplazá  TU_ID_DE_FORMSPREE  por  abcdwxyz
+5. Mandá un mensaje de prueba y confirmá el email que te llega de Formspree.
+El plan gratis permite 50 mensajes por mes.
+Si el ID no está puesto, el formulario avisa en pantalla en vez de enviar.
+
+
+PUBLICARLO
+----------
+Al subir la carpeta completa a Netlify, Vercel o GitHub Pages funciona igual.
+Ojo: GitHub no acepta archivos de más de 100 MB.

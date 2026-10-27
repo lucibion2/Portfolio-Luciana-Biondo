@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✏️ Título que aparece en la pestaña del navegador y en Google -->
+  <title>Luciana Biondo · Editora de video y comunicadora</title>
+  <meta name="description" content="Portfolio de Luciana Biondo: edición de video, filmmaking, contenido para redes y comunicación estratégica. Mendoza, Argentina.">
+
+  <!-- Tipografías (Google Fonts). No hace falta tocar. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Estilos (colores, tamaños, animaciones) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!--
+╔══════════════════════════════════════════════════════════════════════╗
+║  GUÍA RÁPIDA PARA EDITAR ESTE PORTFOLIO                              ║
+║                                                                      ║
+║  1. Buscá con Ctrl+F (Cmd+F en Mac) el texto  ✏️  para encontrar     ║
+║     todos los lugares que podés modificar.                           ║
+║  2. VIDEOS: van en la carpeta /videos con estos nombres exactos:     ║
+║        felix-1.mp4      felix-2.mp4      felix-3.mp4                 ║
+║        diariouno-1.mp4  diariouno-2.mp4  diariouno-3.mp4             ║
+║        jh-1.mp4         jh-2.mp4         jh-3.mp4                    ║
+║     (minúsculas, sin espacios, sin tildes). Ver sección TRABAJOS.    ║
+║  3. FOTO: va en /img con el nombre  luciana.jpg                      ║
+║  4. FORMULARIO: reemplazá TU_ID_DE_FORMSPREE en la sección CONTACTO. ║
+║  5. JH BROKER: completá los textos marcados con [COMPLETAR].         ║
+║                                                                      ║
+║  Si algo no carga, la página te muestra un cartel avisando qué       ║
+║  archivo falta. Más detalles en el archivo LEEME.txt                 ║
+╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+
+<!-- ═════════ INTRO ANIMADA (cuenta regresiva de película 3·2·1) ═════════
+     No hace falta tocar. Se muestra una sola vez por visita. -->
+<div class="leader" id="leader" aria-hidden="true">
+  <div class="leader__ring">
+    <span class="leader__sweep"></span>
+    <span class="leader__num" id="leaderNum">3</span>
+  </div>
+  <span class="leader__h"></span><span class="leader__v"></span>
+</div>
+
+<!-- Cursor personalizado (solo en computadora). No tocar. -->
+<div class="cursor" id="cursor" aria-hidden="true"><span>PLAY</span></div>
+
+<!-- Barra de progreso superior estilo línea de tiempo. No tocar. -->
+<div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"><span></span></div></div>
+
+
+<!-- ═════════════════════════ MENÚ ═════════════════════════ -->
+<nav class="nav" id="nav">
+  <a href="#inicio" class="nav__logo" aria-label="Inicio">L<em>B</em></a>
+  <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+  <ul class="nav__links" id="navLinks">
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#trabajos">Trabajos</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#contacto" class="nav__cta">Hablemos</a></li>
+  </ul>
+</nav>
+
+
+<!-- ═════════════════════════ PORTADA (HERO) ═════════════════════════ -->
+<header class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Marco de cámara (visor) con REC y código de tiempo -->
+  <div class="viewfinder" aria-hidden="true">
+    <span class="vf-corner vf-corner--tl"></span><span class="vf-corner vf-corner--tr"></span>
+    <span class="vf-corner vf-corner--bl"></span><span class="vf-corner vf-corner--br"></span>
+    <div class="vf-top"><span class="rec"><i></i>REC</span><span class="vf-spec">4K · 24 FPS · 9:16</span></div>
+    <div class="vf-bottom"><span class="tc" id="heroTC">00:00:00:00</span><span class="battery"><i></i></span></div>
+  </div>
+
+  <div class="hero__content">
+    <!-- ✏️ Texto chico arriba del nombre -->
+    <p class="eyebrow"><span class="dot"></span>Mendoza, Argentina · Disponible para proyectos</p>
+
+    <h1 class="hero__title">
+      <span class="line"><span>Luciana</span></span>
+      <span class="line"><span><em>Biondo</em></span></span>
+    </h1>
+
+    <!-- Las palabras que van rotando se editan en script.js (busca ✏️ PALABRAS) -->
+    <p class="hero__role">Soy <span class="rotator" id="rotator">editora de video</span><span class="caret"></span></p>
+
+    <!-- ✏️ Frase de presentación -->
+    <p class="hero__lead">Transformo ideas en videos que se miran hasta el final: guion, rodaje y edición para medios, marcas y campañas.</p>
+
+    <div class="hero__ctas">
+      <a class="btn btn--primary" href="#trabajos">Ver trabajos <span aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" href="#contacto">Contactarme</a>
+    </div>
+  </div>
+
+  <!-- Sello circular giratorio -->
+  <a href="#trabajos" class="hero__seal" aria-label="Ver trabajos">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <defs><path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+      <text><textPath href="#circlePath">EDICIÓN · GUION · RODAJE · POSTPRODUCCIÓN · </textPath></text>
+    </svg>
+    <span class="hero__seal-play">▶</span>
+  </a>
+
+  <a href="#sobre-mi" class="scroll-cue" aria-label="Bajar"><span></span>scroll</a>
+</header>
+
+
+<!-- ═════════ CINTA DE PELÍCULA EN MOVIMIENTO ═════════
+     ✏️ Podés cambiar las palabras. Están repetidas dos veces a propósito
+     (para que el movimiento sea infinito): si cambiás una, cambiala en las dos. -->
+<div class="filmstrip" aria-hidden="true">
+  <div class="filmstrip__track">
+    <span>Edición de video</span><i>✦</i><span>Filmmaking</span><i>✦</i><span>Guion y narrativa</span><i>✦</i><span>Reels y TikTok</span><i>✦</i><span>Diseño sonoro</span><i>✦</i><span>Redacción SEO</span><i>✦</i><span>Comunicación política</span><i>✦</i>
+    <span>Edición de video</span><i>✦</i><span>Filmmaking</span><i>✦</i><span>Guion y narrativa</span><i>✦</i><span>Reels y TikTok</span><i>✦</i><span>Diseño sonoro</span><i>✦</i><span>Redacción SEO</span><i>✦</i><span>Comunicación política</span><i>✦</i>
+  </div>
+</div>
+
+
+<!-- ═════════════════════════ 01 · SOBRE MÍ ═════════════════════════ -->
+<section class="section about" id="sobre-mi">
+  <div class="container about__grid">
+
+    <div class="about__photo reveal">
+      <!-- ✏️ FOTO: guardá la foto como  img/luciana.jpg  (vertical queda mejor).
+           Si no existe, se muestra un recuadro con las iniciales. -->
+      <div class="photo-frame">
+        <img src="img/luciana.jpeg" alt="Luciana Biondo" onerror="this.parentElement.classList.add('is-empty')">
+        <div class="photo-placeholder"><span>LB</span><small>Poné la foto en<br>img/luciana.jpg</small></div>
+      </div>
+      <span class="photo-tag"><i></i> En set</span>
+      <span class="photo-sticker">Estudiante avanzada<br><b>Com. Social · UNCuyo</b></span>
+    </div>
+
+    <div class="about__text">
+      <p class="section-label reveal">01 — Sobre mí</p>
+      <h2 class="section-title reveal">Cuento historias <em>en cortes</em>.</h2>
+
+      <!-- ✏️ Biografía -->
+      <p class="reveal">Soy estudiante avanzada de la Licenciatura en Comunicación Social en la Universidad Nacional de Cuyo y trabajé en medios digitales desde 2024. Hoy produzco, filmo y edito videos originales todos los días para JH Broker.</p>
+      <p class="reveal">Mi fuerte es transformar ideas en contenido: pensar conceptos creativos, desarrollar guiones y diseñar estrategias de comunicación adaptadas a cada plataforma. Busco que cada pieza tenga un propósito, conecte con su audiencia y transmita un mensaje claro, ya sea para una marca, una campaña o un proyecto periodístico.</p>
+
+      <!-- ✏️ Números destacados: el número va en data-count -->
+      <div class="stats reveal">
+        <div class="stat"><span class="stat__num" data-count="3">0</span><span class="stat__label">videos originales<br>por día</span></div>
+        <div class="stat"><span class="stat__num" data-count="2" data-prefix="+">0</span><span class="stat__label">años en medios<br>digitales</span></div>
+        <div class="stat"><span class="stat__num" data-count="2">0</span><span class="stat__label">mercados:<br>AR y EE.UU.</span></div>
+        <div class="stat"><span class="stat__num" data-count="5">0</span><span class="stat__label">equipos y marcas<br>con las que trabajé</span></div>
+      </div>
+
+      <div class="about__meta reveal">
+        <div>
+          <h3>Formación</h3>
+          <ul>
+            <li><b>Lic. en Comunicación Social</b> — UNCuyo · 2020 – actualidad</li>
+            <li><b>Inglés B2</b> — Instituto Cultural de Mendoza · 2015 – 2019</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Herramientas</h3>
+          <ul class="chips">
+            <li>Premiere Pro</li><li>Cap Cut</li><li>IA</li><li>Da Vinci</li><li>Canva</li><li>SEO</li><li>Manejo de cámara</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═════════════════════════ 02 · SERVICIOS ═════════════════════════ -->
+<section class="section services" id="servicios">
+  <div class="container">
+    <p class="section-label reveal">02 — Servicios</p>
+    <h2 class="section-title reveal">Lo que puedo hacer <em>por tu proyecto</em>.</h2>
+
+    <div class="services__grid">
+
+      <!-- Servicio principal, más grande y con una mini línea de tiempo animada -->
+      <article class="service service--feature reveal tilt">
+        <span class="service__num">01</span>
+        <h3>Edición de video</h3>
+        <p>Montaje ágil, ritmo, color, diseño sonoro y subtitulado para Reels, TikTok, YouTube y piezas institucionales. Formato vertical u horizontal, listo para publicar.</p>
+        <div class="mini-timeline" aria-hidden="true">
+          <div class="mt-track"><span style="--w:22%"></span><span style="--w:34%"></span><span style="--w:18%"></span><span style="--w:26%"></span></div>
+          <div class="mt-track mt-track--b"><span style="--w:40%"></span><span style="--w:30%"></span><span style="--w:30%"></span></div>
+          <div class="mt-wave" id="miniWave"></div>
+          <span class="mt-head"></span>
+        </div>
+        <ul class="service__tags"><li>Montaje</li><li>Sonido</li><li>Subtítulos</li><li>Motion</li></ul>
+      </article>
+
+      <article class="service reveal tilt">
+        <span class="service__num">02</span>
+        <h3>Filmación y realización</h3>
+        <p>Rodaje en set y exteriores, optimizando recursos y tiempos de captura.</p>
+      </article>
+
+      <article class="service reveal tilt">
+        <span class="service__num">03</span>
+        <h3>Guion y narrativa</h3>
+        <p>Scripts dinámicos pensados para el impacto visual y la retención de audiencia.</p>
+      </article>
+
+      <article class="service reveal tilt">
+        <span class="service__num">04</span>
+        <h3>Contenido para redes</h3>
+        <p>Piezas adaptadas a cada plataforma según tendencias y públicos.</p>
+      </article>
+
+      <article class="service reveal tilt">
+        <span class="service__num">05</span>
+        <h3>Redacción y SEO</h3>
+        <p>Contenidos periodísticos y corporativos optimizados para buscadores.</p>
+      </article>
+
+      <article class="service reveal tilt">
+        <span class="service__num">06</span>
+        <h3>Comunicación estratégica</h3>
+        <p>Mensajes claros para campañas políticas, instituciones y marcas.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════ 03 · TRABAJOS (VIDEOS) ═════════════════════════
+
+  📁 CÓMO CARGAR LOS VIDEOS
+  ────────────────────────────────────────────────────────────────
+  1. Guardá los videos dentro de la carpeta  videos/  (al lado de este archivo).
+  2. Nombralos EXACTAMENTE así (minúsculas, sin espacios ni tildes):
+
+        Campaña Félix   →  felix-1.mp4      felix-2.mp4      felix-3.mp4
+        Diario UNO      →  diariouno-1.mp4  diariouno-2.mp4  diariouno-3.mp4
+        JH Broker       →  jh-1.mp4         jh-2.mp4         jh-3.mp4
+
+  3. Formato recomendado: .mp4 (H.264), vertical 9:16, idealmente menos de 30 MB
+     cada uno para que la página cargue rápido.
+  4. Si un video falta, la tarjeta muestra el nombre del archivo que tenés que subir.
+
+  ➕ ¿Querés agregar un 4.º video a un proyecto? Copiá un bloque <article> completo
+     (desde <article hasta </article>), pegalo debajo y cambiá el nombre del archivo.
+  ────────────────────────────────────────────────────────────────── -->
+<section class="section work" id="trabajos">
+  <div class="container">
+    <p class="section-label reveal">03 — Trabajos destacados</p>
+    <h2 class="section-title reveal">Videos que <em>hablan por mí</em>.</h2>
+
+    <!-- Botones para cambiar de proyecto. El data-filter tiene que coincidir con el data-cat de los videos -->
+    <div class="tabs reveal" role="tablist">
+      <button class="tab is-active" data-filter="jh" role="tab">JH Broker <small>03</small></button>
+<button class="tab" data-filter="diariouno" role="tab">Grupo América <small>03</small></button>
+<button class="tab" data-filter="felix" role="tab">Campaña Félix <small>03</small></button>
+      <span class="tabs__indicator" id="tabsIndicator"></span>
+    </div>
+
+    <!-- Descripción de cada proyecto (se muestra según el botónx elegido) -->
+    <div class="project-info reveal">
+
+      <!-- ✏️ Texto del proyecto CAMPAÑA FÉLIX -->
+      <div class="project is-active" data-project="felix">
+        <span class="project__tag">Comunicación política · 2025</span>
+        <h3>Campaña Félix</h3>
+        <p>Content creator y editora audiovisual de la campaña electoral. Desarrollé piezas estratégicas para redes con foco en la claridad del mensaje, adaptando cada contenido a su plataforma y traduciendo temas complejos en relatos simples.</p>
+        <ul class="project__roles"><li>Edición</li><li>Estrategia digital</li><li>Narrativa</li></ul>
+      </div>
+
+      <!-- ✏️ Texto del proyecto DIARIO UNO -->
+      <div class="project" data-project="diariouno">
+        <span class="project__tag">Medios · Grupo América · 2024 – 2026</span>
+        <h3>Diario UNO</h3>
+        <p>Filmmaker y creadora de contenido en Grupo América: idea, guion, rodaje y edición de 8 videos originales por día, con montaje ágil, diseño sonoro y subtitulado para el consumo rápido.</p>
+        <ul class="project__roles"><li>Guion</li><li>Rodaje</li><li>Edición diaria</li></ul>
+      </div>
+
+      <!-- ✏️ Texto del proyecto JH BROKER -->
+      <div class="project" data-project="jh">
+        <span class="project__tag">Seguros · 2026</span>
+        <h3>JH Broker de Seguros</h3>
+        <p>Creación, filmación y edición de videos para Instagram, TikTok y otras plataformas digitales, orientados a comunicar servicios del sector asegurador, fortalecer la identidad de marca, generar interacción con la audiencia y difundir eventos corporativos.</p>
+        <ul class="project__roles"><li>Edición</li><li>Producción</li><li>Filmación
+      </div>
+
+      <div class="project" data-project="todos">
+        <span class="project__tag">Selección completa</span>
+        <h3>Todos los trabajos</h3>
+        <p>Una mirada a los tres proyectos: comunicación política, medios digitales y marca.</p>
+      </div>
+    </div>
+
+    <!-- GRILLA DE VIDEOS -->
+    <div class="video-grid" id="videoGrid">
+
+      <!-- ─── CAMPAÑA FÉLIX ─── -->
+      <!-- ✏️ Cambiá el título (h4) y la descripción (p) de cada video -->
+      <article class="video-card" data-cat="felix">
+        <div class="video-card__media">
+          <video src="videos/felix-1.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>felix-1.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Debate CUC</h4><p>Reel de campaña</p></div>
+      </article>
+
+      <article class="video-card" data-cat="felix">
+        <div class="video-card__media">
+          <video src="videos/felix-2.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>felix-2.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Campaña en Maipú</Main></h4><p>Reel de campaña</p></div>
+      </article>
+
+      <article class="video-card" data-cat="felix">
+        <div class="video-card__media">
+          <video src="videos/felix-3.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>felix-3.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Campaña en San Martín</h4><p>Reel de campaña</p></div>
+      </article>
+
+      <!-- ─── DIARIO UNO ─── -->
+      <article class="video-card" data-cat="diariouno">
+        <div class="video-card__media">
+          <video src="videos/diariouno-1.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>diariouno-1.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Mundial</h4><p>Video para El Siete</p></div>
+      </article>
+
+      <article class="video-card" data-cat="diariouno">
+        <div class="video-card__media">
+          <video src="videos/diariouno-2.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>diariouno-2.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Modorra</h4><p>Video para Diario UNO</p></div>
+      </article>
+
+      <article class="video-card" data-cat="diariouno">
+        <div class="video-card__media">
+          <video src="videos/diariouno-3.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>diariouno-3.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Mate dulce o amargo</h4><p>Video para El Siete</p></div>
+      </article>
+
+      <!-- ─── JH BROKER ─── -->
+      <article class="video-card" data-cat="jh">
+        <div class="video-card__media">
+          <video src="videos/jh-1.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>jh-1.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Seguro de mascotas</h4><p>Video para JH Broker</p></div>
+      </article>
+
+      <article class="video-card" data-cat="jh">
+        <div class="video-card__media">
+          <video src="videos/jh-2.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>jh-2.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Día del productor</h4><p>Video para JH Broker</p></div>
+      </article>
+
+      <article class="video-card" data-cat="jh">
+        <div class="video-card__media">
+          <video src="videos/jh-3.mov#t=0.1" muted loop playsinline preload="metadata"></video>
+          <div class="video-card__missing"><b>jh-3.mp4</b><small>Subí este video a la carpeta /videos</small></div>
+          <span class="video-card__dur">--:--</span>
+        </div>
+        <div class="video-card__info"><h4>Seguro de mascotas 2</h4><p>Video para JH Broker</p></div>
+      </article>
+
+    </div>
+    <p class="work__hint">Pasá el mouse para previsualizar · Tocá para ver con sonido</p>
+  </div>
+</section>
+
+<!-- Ventana que se abre al tocar un video (no tocar) -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">✕</button>
+  <figure class="lightbox__frame">
+    <video id="lightboxVideo" controls playsinline></video>
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+
+<!-- ═════════════════════════ 04 · EXPERIENCIA ═════════════════════════
+
+  La experiencia se muestra de dos formas:
+  A) Una LÍNEA DE TIEMPO estilo Premiere (los "clips" de colores).
+  B) Las TARJETAS con el detalle de cada trabajo (más abajo).
+
+  ✏️ Para mover o alargar un clip en la línea de tiempo, cambiá --start y --end
+     (son porcentajes de 0 a 100):
+        0  = enero 2024
+        33 = enero 2025
+        67 = enero 2026
+        92 = hoy (octubre 2026)
+     Ejemplo: style="--start:40; --end:64"  → de abril 2025 a junio 2025 aprox.
+────────────────────────────────────────────────────────────────────── -->
+<section class="section experience" id="experiencia">
+  <div class="container">
+    <p class="section-label reveal">04 — Experiencia</p>
+    <h2 class="section-title reveal">Mi carrera, <em>en la línea de tiempo</em>.</h2>
+    <p class="section-intro reveal">Bajá despacio: el cabezal recorre mi trayectoria. Tocá un clip para ver el detalle.</p>
+
+    <div class="nle reveal" id="nle">
+      <div class="nle__bar">
+        <span class="nle__dots"><i></i><i></i><i></i></span>
+        <span class="nle__file">Secuencia — Luciana_Biondo_Carrera</span>
+        <span class="nle__tc" id="nleTC">ENE 2024</span>
+      </div>
+      <div class="nle__scroll">
+        <div class="nle__body" id="nleBody">
+          <div class="nle__row nle__row--ruler">
+            <span class="nle__label"></span>
+            <div class="nle__lane nle__ruler">
+              <span style="--at:0">2024</span><span style="--at:33.3">2025</span><span style="--at:66.6">2026</span><span class="is-now" style="--at:91.7">HOY</span>
+            </div>
+          </div>
+
+          <div class="nle__row">
+            <span class="nle__label">V3</span>
+            <div class="nle__lane">
+              <!-- ✏️ JH BROKER: ajustá --start y --end según cuándo trabajaste ahí -->
+              <button class="clip clip--sky clip--todo" style="--start:70; --end:92" data-target="exp-jh">JH Broker · Filmmaker</button>
+            </div>
+          </div>
+          <div class="nle__row">
+            <span class="nle__label">V2</span>
+            <div class="nle__lane">
+              <button class="clip clip--caramel" style="--start:38; --end:66" data-target="exp-felix">Campaña Félix</button>
+            </div>
+          </div>
+          <div class="nle__row">
+            <span class="nle__label">V1</span>
+            <div class="nle__lane">
+              <button class="clip clip--sand" style="--start:0; --end:30" data-target="exp-buda">Buda Productora</button>
+              <button class="clip clip--celeste" style="--start:67; --end:85" data-target="exp-america">Grupo América · Directora de contenido</button>
+            </div>
+          </div>
+          <div class="nle__row nle__row--audio">
+            <span class="nle__label">A1</span>
+            <div class="nle__lane">
+              <button class="clip clip--audio" style="--start:6; --end:67" data-target="exp-uno">Diario UNO · Redacción</button>
+            </div>
+          </div>
+
+          <div class="nle__playhead" id="playhead"><span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TARJETAS DE EXPERIENCIA
+         ✏️ Cada <article class="job"> es un trabajo. El id tiene que coincidir con el
+            data-target del clip de arriba para que al tocarlo te lleve acá. -->
+    <div class="jobs">
+            <article class="job reveal" id="exp-jh">
+        <div class="job__when">Actual</div>
+        <div class="job__body job__body--todo">
+          <!-- ✏️ JH BROKER: completá todo lo que dice [COMPLETAR] -->
+          <h3>Creadora de contenido audiovisual</h3>
+          <p class="job__where">JH Broker de Seguros</p>
+          <ul>
+            <li>Desarrollo de ideas creativas y guiones para contenido de redes sociales.</li>
+            <li>Planificación, filmación y edición de videos sobre distintas áreas del sector asegurador.</li>
+            <li>Cobertura audiovisual de eventos corporativos y edición de material para su difusión digital.</li>
+            <li>Producción de contenido adaptado a los objetivos de comunicación y a cada plataforma digital.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job reveal" id="exp-america">
+        <div class="job__when">2026 — 2026 </div>
+        <div class="job__body">
+          <h3>Directora de contenido audiovisual</h3>
+          <p class="job__where">Grupo América</p>
+          <ul>
+            <li><b>Producción de alto volumen:</b> 8 videos originales por día, desde la idea hasta la entrega.</li>
+            <li><b>Guion y narrativa:</b> scripts dinámicos enfocados en impacto visual y retención.</li>
+            <li><b>Filmación:</b> rodaje en set y exteriores, optimizando recursos y tiempos.</li>
+            <li><b>Edición:</b> montaje ágil, diseño sonoro y subtitulado para consumo rápido.</li>
+            <li><b>Coordinación de contenidos:</b> organización del flujo de producción y supervisión de las distintas etapas para garantizar la entrega diaria de piezas audiovisuales</li>
+          </ul>
+        </div>
+      </article>
+
+
+      <article class="job reveal" id="exp-felix">
+        <div class="job__when">2025</div>
+        <div class="job__body">
+          <h3>Content creator y editora audiovisual</h3>
+          <p class="job__where">Campaña política electoral · Emir Félix</p>
+          <ul>
+            <li>Contenidos audiovisuales estratégicos para comunicación política en redes.</li>
+            <li>Edición con foco en la claridad del mensaje y el impacto.</li>
+            <li>Análisis de tendencias y adaptación de piezas por plataforma.</li>
+            <li>Temas complejos contados con recursos narrativos accesibles.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job reveal" id="exp-uno">
+        <div class="job__when">2024 — 2026</div>
+        <div class="job__body">
+          <h3>Redactora de contenidos digitales</h3>
+          <p class="job__where">Diario UNO · Grupo América</p>
+          <ul>
+            <li>Contenidos periodísticos para el mercado hispano de Estados Unidos y Latinoamérica.</li>
+            <li>Técnicas de SEO para mejorar visibilidad y alcance.</li>
+            <li>Estrategias editoriales adaptadas a distintos públicos.</li>
+            <li>Estándares de calidad editorial y plazos de entrega.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job reveal" id="exp-buda">
+        <div class="job__when">2024</div>
+        <div class="job__body">
+          <h3>Producción</h3>
+          <p class="job__where">Buda Casa Productora</p>
+          <ul>
+            <li>Coordinación de equipos multidisciplinarios en proyectos audiovisuales.</li>
+            <li>Planificación y ejecución de campañas para redes sociales.</li>
+            <li>Supervisión de procesos técnicos y creativos.</li>
+            <li>Gestión de tiempos, presupuestos y entregas.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════ 05 · CONTACTO ═════════════════════════
+
+  📨 FORMULARIO CON FORMSPREE (los mensajes llegan al correo de Luciana)
+  ────────────────────────────────────────────────────────────────
+  1. Entrá a https://formspree.io y creá una cuenta con  lucibion2@gmail.com
+  2. Tocá "New Form", ponele un nombre (ej: Portfolio) y crealo.
+  3. Te da una dirección como:  https://formspree.io/f/abcdwxyz
+  4. Copiá SOLO el código final (abcdwxyz) y reemplazá  TU_ID_DE_FORMSPREE
+     en la línea del <form ... action="..."> de abajo.
+  5. El primer mensaje que llegue, Formspree pide confirmar el correo: confirmalo.
+  ────────────────────────────────────────────────────────────────── -->
+<section class="section contact" id="contacto">
+  <div class="container contact__grid">
+
+    <div class="contact__info">
+      <p class="section-label reveal">05 — Contacto</p>
+      <h2 class="contact__title reveal">¿Tenés una historia <em>para contar?</em></h2>
+      <p class="reveal">Contame tu idea y armamos juntos el video, la campaña o el contenido que necesitás.</p>
+
+      <!-- ✏️ Datos de contacto
+           Toda la tarjeta es un botón: al tocarla se abre la app correspondiente.
+
+           WHATSAPP: el número va después de wa.me/ con formato 549 + característica + número
+                     (sin 0, sin 15, sin espacios). El texto después de ?text= es el mensaje
+                     que aparece ya escrito; los espacios se escriben como %20.
+           EMAIL:    después de mailto: va el correo. ?subject= es el asunto que aparece ya escrito. -->
+      <ul class="contact__list reveal">
+        <li class="contact__item">
+          <span class="contact__icon">WA</span>
+          <div><small>WhatsApp</small><a class="contact__link" href="https://wa.me/5492613892373?text=Hola%20Luciana%2C%20vi%20tu%20portfolio%20y%20quiero%20consultarte%20por%20un%20proyecto." target="_blank" rel="noopener">261 389 2373</a></div>
+          <span class="contact__go">Abrir chat <b>↗</b></span>
+        </li>
+        <li class="contact__item">
+          <span class="contact__icon">@</span>
+          <div><small>Email</small><a class="contact__link" href="mailto:lucibion2@gmail.com?subject=Consulta%20desde%20tu%20portfolio">lucibion2@gmail.com</a></div>
+          <button class="copy-btn" data-copy="lucibion2@gmail.com" type="button">Copiar</button>
+          <span class="contact__go">Escribir <b>↗</b></span>
+        </li>
+        <li class="contact__item">
+          <span class="contact__icon">in</span>
+          <div><small>LinkedIn</small><a class="contact__link" href="https://www.linkedin.com/in/lucianabion2" target="_blank" rel="noopener">/in/lucianabion2</a></div>
+          <span class="contact__go">Ver perfil <b>↗</b></span>
+        </li>
+        <li>
+          <span class="contact__icon">◎</span>
+          <div><small>Ubicación</small><span>Mendoza, Argentina · trabajo remoto</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ✏️ Reemplazá TU_ID_DE_FORMSPREE por el código que te da Formspree -->
+    <form class="form reveal" id="contactForm" action="https://formspree.io/f/mjyyylaw" method="POST">
+      <div class="form__head"><span class="rec"><i></i>REC</span><span>Nuevo mensaje</span></div>
+
+      <label class="field">
+        <span>Nombre</span>
+        <input type="text" name="nombre" required placeholder="¿Cómo te llamás?">
+      </label>
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" required placeholder="tu@email.com">
+      </label>
+      <label class="field">
+        <span>¿Qué necesitás?</span>
+        <!-- ✏️ Opciones del desplegable -->
+        <select name="servicio">
+          <option>Edición de video</option>
+          <option>Filmación y edición</option>
+          <option>Contenido para redes</option>
+          <option>Redacción / SEO</option>
+          <option>Comunicación estratégica</option>
+          <option>Otro</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Mensaje</span>
+        <textarea name="mensaje" rows="4" required placeholder="Contame sobre tu proyecto..."></textarea>
+      </label>
+
+      <!-- Campo invisible anti-spam. No tocar. -->
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+
+      <button class="btn btn--primary btn--full" type="submit" id="formBtn">Enviar mensaje <span aria-hidden="true">→</span></button>
+      <p class="form__status" id="formStatus" role="status"></p>
+    </form>
+
+  </div>
+</section>
+
+
+<!-- ═════════════════════════ PIE DE PÁGINA ═════════════════════════ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <span class="footer__name">Luciana <em>Biondo</em></span>
+    <span>© <span id="year">2026</span> · Edición de video y comunicación · Mendoza</span>
+    <a href="#inicio" class="footer__top">Volver arriba ↑</a>
+  </div>
+</footer>
+
+<!-- Funciones y animaciones -->
+<script src="script.js"></script>
+</body>
+</html>
